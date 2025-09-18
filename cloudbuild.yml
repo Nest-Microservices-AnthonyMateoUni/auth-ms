@@ -1,0 +1,18 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'orthamerica-south1-docker.pkg.dev/tienda-microservices-472419/image-register/auth-ms',
+        '-f',
+        'dockerfile.prod',
+        '--platform=linux/amd64',
+        '.',
+      ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        'orthamerica-south1-docker.pkg.dev/tienda-microservices-472419/image-register/auth-ms',
+      ]
